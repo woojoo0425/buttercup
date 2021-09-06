@@ -1,0 +1,21 @@
+.header-font {
+    font-family: 'Lobster', cursive;
+}
+.header-content {
+    text-align: center;
+    margin: 2rem 0;
+}
+.footer-logo {
+    margin-top: 1rem;
+    font-family: 'Lobster', cursive;
+}
+.footer-content {
+    text-align: center;
+    margin-top: 2rem;
+}
+.footer-button {
+    font-size: 0.9rem;
+}
+.content-font {
+    font-family: 'Gothic A1', sans-serif;
+}
