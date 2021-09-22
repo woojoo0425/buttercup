@@ -3,9 +3,6 @@
 {% block content %}
     <div style="text-align: center; max-width: 500px; margin: 4rem auto;">
         <div>
-            <p>
-                {{ target_user.date_joined }}
-            </p>
             {% if target_user.profile %}
             <img src="{{ target_user.profile.image.url }}" alt=""
                  style="height: 12rem; width: 12rem; border-radius: 20rem; margin-bottom: 2rem;">
@@ -17,9 +14,12 @@
                 </a>
                 {% endif %}
             </h2>
-            <h5 style="margin-bottom: 3rem;">
+            <h6 style="margin-bottom: 3rem;">
                 {{ target_user.profile.message }}
-            </h5>
+            </h6>
+            <p>
+                {{ target_user.date_joined }}
+            </p>
             {% else %}
             {% if target_user == user %}
             <a href="{% url 'profileapp:create' %}">
@@ -28,21 +28,19 @@
                 </h2>
             </a>
             {% else %}
-            <h2>
+            <h4>
                 닉네임 미설정
-            </h2>
+            </h4>
             {% endif %}
             {% endif %}
             {% if target_user == user %}
-            <a href="{% url 'accountapp:update' pk=user.pk %}">
-                <p>
-                    Change Info
-                </p>
+            <a href="{% url 'accountapp:update' pk=user.pk %}"
+               class="btn btn-secondary rounded-pill col-3">
+                Update
             </a>
-            <a href="{% url 'accountapp:delete' pk=user.pk %}">
-                <p>
-                    Quit
-                </p>
+            <a href="{% url 'accountapp:delete' pk=user.pk %}"
+               class="btn btn-danger rounded-pill col-3">
+                Delete
             </a>
             {% endif %}
         </div>
