@@ -11,8 +11,8 @@
         <div style="border-radius: 2rem;">
             <img src="{{ target_article.image.url }}" width="100%;">
         </div>
-        <p>
-            {{ target_article.content }}
+        <p style="text-align: text-left;">
+            {{ target_article.content | safe }}
         </p>
         {% if target_article.writer == user %}
         <div style="padding: 3rem;">
