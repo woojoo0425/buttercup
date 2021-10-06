@@ -9,7 +9,8 @@
             <h2>
                 {{ target_user.profile.nickname }}
                 {% if target_user == user %}
-                <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}"
+                   class="material-icons" style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: 0.3rem;">
                     edit
                 </a>
                 {% endif %}
@@ -17,9 +18,6 @@
             <h6 style="margin-bottom: 3rem;">
                 {{ target_user.profile.message }}
             </h6>
-            <p>
-                {{ target_user.date_joined }}
-            </p>
             {% else %}
             {% if target_user == user %}
             <a href="{% url 'profileapp:create' %}">
@@ -29,18 +27,18 @@
             </a>
             {% else %}
             <h4>
-                닉네임 미설정
+                Not Yet
             </h4>
             {% endif %}
             {% endif %}
             {% if target_user == user %}
             <a href="{% url 'accountapp:update' pk=user.pk %}"
-               class="btn btn-secondary rounded-pill col-3">
-                Update
+               class="material-icons" style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: 0.4rem;">
+                settings
             </a>
             <a href="{% url 'accountapp:delete' pk=user.pk %}"
-               class="btn btn-danger rounded-pill col-3">
-                Delete
+               class="material-icons" style="box-shadow: 0 0 4px #fcc; border-radius: 10rem; padding: 0.4rem;">
+                cancel
             </a>
             {% endif %}
         </div>

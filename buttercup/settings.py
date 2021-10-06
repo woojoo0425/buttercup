@@ -147,7 +147,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT = reverse_lazy('accountapp:hello_world')
+LOGIN_REDIRECT = reverse_lazy('home')
 LOGOUT_REDIRECT = reverse_lazy('accountapp:login')
 
 # Default primary key field type

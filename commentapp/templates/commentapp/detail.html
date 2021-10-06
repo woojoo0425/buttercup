@@ -1,4 +1,4 @@
-<div style="border: 1px solid; text-align: left; padding: 4%; border-radius: 1rem;
+<div style="border: 1px solid; text-align: left; padding: 2%; border-radius: 1rem;
             border-color: #bbb;">
     <div>
         <strong>
@@ -12,8 +12,9 @@
     </div>
     {% if comment.writer == user %}
     <div style="text-align: right;">
-        <a href="{% url 'commentapp:delete' pk=comment.pk %}" class="btn btn-danger rounded-pill">
-            Delete
+        <a href="{% url 'commentapp:delete' pk=comment.pk %}"
+           class="material-icons" style="box-shadow: 0 0 4px #fcc; border-radius: 10rem; padding: 0.4rem;">
+            cancel
         </a>
     </div>
     {% endif %}
